@@ -49,12 +49,14 @@ const FutureEvents = ({ desc = true }) => {
                             </Link>
                         </span>
                     </h2>
-                    {desc
-                        ? documentToReactComponents(
-                              edge.node
-                                  .childContentfulEventDescriptionRichTextNode
-                                  .json
-                          )
+                    {desc ? 
+                        edge.node.childContentfulEventDescriptionRichTextNode
+                        && edge.node.childContentfulEventDescriptionRichTextNode ? 
+                            documentToReactComponents(
+                                edge.node
+                                    .childContentfulEventDescriptionRichTextNode
+                                    .json
+                            ) : null
                         : null}
                     <EventFooter
                         date={edge.node.date}
